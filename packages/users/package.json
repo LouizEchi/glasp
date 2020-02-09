@@ -1,0 +1,40 @@
+{
+    "name": "user-management",
+    "version": "0.0.1",
+    "description": "GLASP User management",
+    "private": true,
+    "lint-staged": {
+        "*.{js,ts,json,css,md}": [
+            "yarn run prettier",
+            "git add"
+        ],
+        "*.ts": [
+            "yarn run lint",
+            "git add"
+        ]
+    },
+    "keywords": [
+        "GLASP",
+        "glasp"
+    ],
+    "author": "Louiz Vincent Echiverri",
+    "license": "ISC",
+    "dependencies": {
+        "aws-lambda": "^1.0.5",
+        "eslint-plugin-jest": "^23.7.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/aws-lambda": "^8.10.40",
+        "@types/node": "^13.7.0",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "eslint": "^6.8.0",
+        "lerna": "^3.20.2",
+        "serverless-jetpack": "^0.8.1",
+        "serverless-plugin-typescript": "^1.1.9",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.7.5"
+    }
+}

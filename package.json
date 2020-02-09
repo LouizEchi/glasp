@@ -1,0 +1,59 @@
+{
+    "name": "glasp",
+    "version": "0.0.1",
+    "description": "GraphQL, Lerna, Aws Lambda, Serverless and PosgreSQL",
+    "private": true,
+    "scripts": {
+        "build": "tsc -b ./packages",
+        "watch": "tsc -w -b ./packages",
+        "test": "lerna run test --",
+        "deploy": "lerna run deploy --",
+        "new-version": "lerna version --conventional-commits --yes",
+        "diff": "lerna diff",
+        "lint": "npx pretty-quick",
+        "prettier": "prettier --write --no-semi --single-quote",
+        "precommit": "yarn run lint",
+        "commit": "npx git-cz",
+        "clean": "yarn run clean-dist && yarn run clean-output && yarn run clean-logs",
+        "clean-incl-deps": "yarn run clean && yarn run clean-deps",
+        "clean-output": "rm -fr output && rm -fr */**/output",
+        "clean-dist": "rm -fr packages/*/dist && rm -fr packages/*/.serverless",
+        "clean-deps": "rm -fr node_modules && rm -fr packages/*/node_modules && rm -f yarn.lock && rm -fr */**/yarn.lock",
+        "clean-logs": "rm -f *.log && rm -fr */**/*.log"
+    },
+    "devDependencies": {
+        "@types/node": "^13.7.0",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "eslint": "^6.8.0",
+        "lerna": "^3.20.2",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "serverless-jetpack": "^0.8.1",
+        "serverless-plugin-typescript": "^1.1.9",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.7.5"
+    },
+    "lint-staged": {
+        "*.{js,ts,json,css,md}": [
+            "yarn run prettier",
+            "git add"
+        ],
+        "*.ts": [
+            "yarn run lint",
+            "git add"
+        ]
+    },
+    "keywords": [
+        "GLASP",
+        "glasp"
+    ],
+    "workspaces": [
+        "packages/*"
+    ],
+    "author": "Louiz Vincent Echiverri",
+    "license": "ISC",
+    "dependencies": {
+        "eslint-plugin-jest": "^23.7.0"
+    }
+}
