@@ -1,9 +1,9 @@
-import { APIGatewayEvent, Context, Handler, Callback } from 'aws-lambda';
+import { APIGatewayEvent, Context, Handler, Callback } from 'aws-lambda'
 
 export const graphqlHandler: Handler = (
   event: APIGatewayEvent,
   context: Context,
-  cb: Callback
+  cb: Callback,
 ) => {
   const response = {
     statusCode: 200,
@@ -14,7 +14,7 @@ export const graphqlHandler: Handler = (
       message: 'Go Serverless v1.0! Your function executed successfully!',
       input: event,
     }),
-  };
+  }
 
-  cb(null, response);
-};
+  cb(null, response)
+}
