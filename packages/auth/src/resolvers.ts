@@ -12,7 +12,6 @@ const errorResponse = (code: number, error: string, errors?: {}) => {
 }
 
 async function userCreate(_: Root, args: UserRequest) {
-  console.log('huhu')
   const { email, password, first_name, last_name, company } = args
 
   if (!email || !password) {
@@ -47,9 +46,9 @@ async function userList(_: Root, args: UserUpdateRequest) {
 
 async function userRetrieve(_: Root, args: UserUpdateRequest) {
   const { id } = args
-  console.log(id)
+
   const data = await UserModel.retrieveUser(id!)
-  console.log(data)
+
   return data
 }
 
