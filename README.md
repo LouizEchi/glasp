@@ -31,7 +31,7 @@ https://8pmskb88j3.execute-api.ap-southeast-1.amazonaws.com/dev/graphql
 `src/gateway/schema.ts`
 ```
 const link = createHttpLink({ uri: <Replace with your link here> })
-``
+```
 
 
 ## Step 5: Test or deploy the gateway
