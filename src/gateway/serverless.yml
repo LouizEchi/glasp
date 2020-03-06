@@ -1,5 +1,5 @@
 service:
-  name: auth
+  name: gateway
 
 plugins:
   - serverless-offline
@@ -16,11 +16,11 @@ provider:
   versionFunctions: false
 
 custom:
-  project: kaishahero
+  project: gateway-apollo
   service_name: auth
   stage: ${opt:stage, self:provider.stage}
   jetpack:
-    base: '../..'
+    base: '../../'
 
 package:
   individually: true

@@ -1,0 +1,43 @@
+{
+  "name": "gateway",
+  "version": "0.0.1",
+  "description": "Gateway microservices",
+  "main": "handler.js",
+  "scripts": {
+    "config": "serverless config credentials --provider aws --key $AWS_KEY --secret $AWS_SECRET --profile armada --overwrite",
+    "deploy": "serverless deploy --stage $STAGE",
+    "remove": "serverless remove",
+    "start": "serverless offline start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "apollo-link": "^1.2.13",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server-lambda": "^2.10.0",
+    "aws-sdk": "^2.594.0",
+    "bcryptjs": "^2.4.3",
+    "class-validator": "^0.11.0",
+    "graphql": "^14.6.0",
+    "node-fetch": "^2.6.0",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.39",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/hapi__joi": "^16.0.4",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^12.12.21",
+    "@types/redis": "^2.8.14",
+    "serverless": "^1.60.0",
+    "serverless-jetpack": "^0.9.0",
+    "serverless-offline": "^5.12.1",
+    "serverless-plugin-typescript": "1.1.7",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.3"
+  },
+  "author": "",
+  "license": "MIT"
+}
