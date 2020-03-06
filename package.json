@@ -38,9 +38,9 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "serverless": "^1.60.0",
-    "serverless-jetpack": "^0.8.1",
+    "serverless-jetpack": "^0.9.0",
     "serverless-offline": "^5.12.1",
-    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-plugin-typescript": "1.1.7",
     "serverless-pseudo-parameters": "^2.5.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.3"
@@ -58,9 +58,14 @@
   "keywords": [
     "GLASP"
   ],
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
   "author": "Louiz Vincent Echiverri",
   "license": "ISC",
   "dependencies": {

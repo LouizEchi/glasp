@@ -16,6 +16,7 @@
     "aws-sdk": "^2.594.0",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.11.0",
+    "graphql": "^14.6.0",
     "js-yaml": "^3.13.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -35,8 +36,9 @@
     "@types/node": "^12.12.21",
     "@types/redis": "^2.8.14",
     "serverless": "^1.60.0",
+    "serverless-jetpack": "^0.9.0",
     "serverless-offline": "^5.12.1",
-    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-plugin-typescript": "1.1.7",
     "serverless-pseudo-parameters": "^2.5.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.3"
