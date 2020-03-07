@@ -1,9 +1,8 @@
 import { ApolloServer, mergeSchemas } from 'apollo-server-lambda'
 import { APIGateway } from './schema'
-import { APIGatewayProxyResult } from 'aws-lambda';
+import { APIGatewayProxyResult } from 'aws-lambda'
 
-
-module.exports.handleGraphql = async(env: any, context: any) => {
+module.exports.handleGraphql = async (env: any, context: any) => {
   const server = new ApolloServer({
     gateway: APIGateway,
     subscriptions: false,
@@ -15,15 +14,16 @@ module.exports.handleGraphql = async(env: any, context: any) => {
     playground: process.env.NODE_ENV !== 'production',
     introspection: true,
   })
-  
-  
-  return new Promise((resolve, reject) => server.createHandler({
+
+  return new Promise((resolve, reject) =>
+    server.createHandler({
       cors: {
         origin: true,
         credentials: false,
       },
     })(env, context, (error: Error, result: APIGatewayProxyResult) => {
-      if (error) return reject(error);
-      return resolve(result);
-    }));
+      if (error) return reject(error)
+      return resolve(result)
+    }),
+  )
 }
