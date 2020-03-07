@@ -1,15 +1,12 @@
 import { ApolloServer, mergeSchemas } from 'apollo-server-lambda'
-import { apiGatewaySchema } from './schema'
+import { APIGateway } from './schema'
 import { APIGatewayProxyResult } from 'aws-lambda';
 
 
 module.exports.handleGraphql = async(env: any, context: any) => {
-  const gt_schema = await apiGatewaySchema();
-  const schema = mergeSchemas({
-    schemas: [gt_schema],
-  })
   const server = new ApolloServer({
-    schema,
+    gateway: APIGateway,
+    subscriptions: false,
     // By default, the GraphQL Playground interface and GraphQL introspection
     // is disabled in "production" (i.e. when `process.env.NODE_ENV` is `production`).
     //

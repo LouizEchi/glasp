@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@apollo/gateway": "^0.13.2",
     "@hapi/joi": "^16.1.8",
     "apollo-link": "^1.2.13",
     "apollo-link-http": "^1.5.16",
